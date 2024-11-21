@@ -1,0 +1,88 @@
+{
+    "info": {
+        "name": "Event Management Platform",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Add Event",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3000/events",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["events"]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"eventName\":\"Sample Event\",\"eventDate\":\"2024-12-01T00:00:00.000Z\",\"organizer\":\"John Doe\",\"email\":\"johndoe@example.com\",\"phone\":\"1234567890\",\"location\":{\"street\":\"123 Main St\",\"city\":\"Sample City\",\"state\":\"Sample State\",\"zip\":\"12345\"}}"
+                }
+            }
+        },
+        {
+            "name": "Update Event",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3000/events/:id",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["events", ":id"]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"eventName\":\"Updated Event Name\"}"
+                }
+            }
+        },
+        {
+            "name": "Delete Event",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:3000/events/:id",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["events", ":id"]
+                }
+            }
+        },
+        {
+            "name": "Retrieve Event",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/events/:id",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["events", ":id"]
+                }
+            }
+        },
+        {
+            "name": "List Events",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/events",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["events"]
+                }
+            }
+        }
+    ]
+}
